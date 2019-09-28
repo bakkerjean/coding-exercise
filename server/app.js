@@ -14,7 +14,13 @@ const auth = new WSAuth(io, {
 
 const sockets = {};
 
-const items = [{ name: "list1" }, { name: "list2" }];
+const items = [
+  {
+    name: "Coding exercise for HCL",
+    todos: ["setup client and server", "git init", "etc"]
+  },
+  { name: "Groceries", todos: ["milk", "eggs", "tomatoes", "bread"] }
+];
 
 io.on("connection", socket => {
   console.log("connected");
