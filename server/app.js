@@ -1,14 +1,17 @@
-const app = require('express')();
-const server = require('http').Server(app);
-const io = require('socket.io')(server);
-const WSAuth = require('socketio-auth');
+const http = require("http");
+const WSServer = require("socket.io");
+const WSAuth = require("socketio-auth");
 
-server.listen(80);
+const httpServer = http.createServer();
+const io = new WSServer(httpServer);
 
-io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
+httpServer.listen(3000, function onListenStarted() {
+  console.log("Server started");
+});
+
+io.on("connection", function(socket) {
+  socket.emit("news", { hello: "world" });
+  socket.on("my other event", function(data) {
     console.log(data);
   });
 });
-
