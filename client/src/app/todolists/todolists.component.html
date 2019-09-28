@@ -1,5 +1,4 @@
 <div class="container">
-  <h2>Todo lists: {{ items.length }}</h2>
   <div class="section">
     <h2>Add todo list</h2>
     <form>
@@ -20,6 +19,7 @@
       </button>
     </form>
   </div>
+  <h2>Todo lists: {{ items.length }}</h2>
   <div class="table-responsive">
     <table class="table">
       <tr *ngFor="let item of items">
