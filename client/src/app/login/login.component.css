@@ -1,12 +1,12 @@
-.login {
-  width: 300px;
+.container {
+  max-width: 600px;
   margin-top: 60px;
 }
 
-.header {
-  text-align: center;
+.form-control {
+  margin-top: 15px
 }
 
-.field {
+button {
   margin-top: 15px
 }
