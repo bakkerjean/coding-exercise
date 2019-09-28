@@ -10,6 +10,7 @@ import { CoreService } from "../socket.service";
 export class TodolistsComponent implements OnInit {
   private items = [];
   private selectedItem: any;
+  private listName = "";
 
   constructor(private coreService: CoreService, private router: Router) {}
 
@@ -30,14 +31,14 @@ export class TodolistsComponent implements OnInit {
     }
   }
 
-  handleRemoteEvent(e) {    
+  handleRemoteEvent(e) {
     switch (e.type) {
       case "itemadded":
         this.items.push(e.data);
         break;
       case "itemdeleted":
-        const index = this.items.findIndex(i => i.name === e.data);        
-        this.items.splice(index, 1);        
+        const index = this.items.findIndex(i => i.name === e.data);
+        this.items.splice(index, 1);
         break;
     }
   }
@@ -57,12 +58,15 @@ export class TodolistsComponent implements OnInit {
 
   add(e, name) {
     e.preventDefault();
-    this.checkLoggedIn(() => {
-      this.coreService.sendCommand({
-        type: "additem",
-        data: { name }
+    if (name.length) {
+      this.checkLoggedIn(() => {
+        this.coreService.sendCommand({
+          type: "additem",
+          data: { name }
+        });
       });
-    });
+      this.listName = "";
+    }
   }
 
   edit(e, name) {
