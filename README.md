@@ -5,21 +5,21 @@ Exercise description:
 - The total number of the available to-do lists should be visible and updated.
 - The user should be able to log out.
 
-Client created with angular cli 8
-Server created with express generator (<-- but ended up not using express at all :))
-Node v10+
+Client created with angular cli 8  
+Server created with express generator (<-- but ended up not using express at all :))  
+Node v10+  
 
-Client - server communication with socket.io
-Basic authentication with socketio-auth
+Client - server communication with socket.io  
+Basic authentication with socketio-auth  
 
-To run this project:
+To run this project:  
 
-git clone git@github.com:bakkerjean/coding-exercise.git
+git clone git@github.com:bakkerjean/coding-exercise.git  
 
-cd client
-npm i
-ng serve
+cd client  
+npm i  
+ng serve  
 
-cd server
-npm i
-npm start
+cd server  
+npm i  
+npm start  
