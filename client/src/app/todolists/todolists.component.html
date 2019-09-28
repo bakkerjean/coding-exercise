@@ -1,1 +1,18 @@
-<p>todolists works!</p>
+<div class="container">
+  <h2>Todo lists: {{ items.length }}</h2>
+  <div class="table-responsive">
+    <table class="table">
+      <tr *ngFor="let item of items">
+        <td>
+          <h3>{{ item.name }}</h3>
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="show(item)">Show</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="delete(item)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
