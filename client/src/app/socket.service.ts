@@ -11,11 +11,20 @@ export class CoreService {
   private socket;
 
   private loggedIn = false;
+  private remoteEvents = new Subject<any>();
 
   constructor() {}
 
   isLoggedIn() {
     return this.loggedIn;
+  }
+
+  getRemoteEvents(): Observable<any> {
+    return this.remoteEvents.asObservable();
+  }
+
+  sendCommand(cmd) {
+    this.socket.emit("cmd", cmd);
   }
 
   login(loginInfo) {
@@ -29,21 +38,25 @@ export class CoreService {
         console.log("connected");
 
         this.socket.emit("authentication", JSON.stringify(loginInfo));
+
         this.socket.on("authenticated", () => {
-          console.log("Authenticated");
+          console.log("authenticated");
           loginObserver.complete();
           this.loggedIn = true;
+          this.socket.on("event", event => {
+            this.remoteEvents.next(event);
+          });
         });
-        this.socket.on("unauthorized", err => {
-          console.log("Unauthorised: " + err);
-          this.notify(loginObserver, "Incorrect user name or password");
 
+        this.socket.on("unauthorized", err => {
+          console.log("unauthorised: " + err);
+          this.notify(loginObserver, "Incorrect user name or password");
           this.socket.disconnect();
         });
       });
 
       this.socket.on("error", err => {
-        console.log("Socket error: " + err);
+        console.log("socket error: " + err);
         this.notify(loginObserver, err);
       });
     });
