@@ -16,7 +16,7 @@ const sockets = {};
 
 const items = [
   {
-    name: "Coding exercise for HCL",
+    name: "Coding exercise",
     todos: ["setup client and server", "git init", "etc"]
   },
   { name: "Groceries", todos: ["milk", "eggs", "tomatoes", "bread"] }

@@ -20,20 +20,32 @@
       </button>
     </form>
   </div>
-  <h2>Todo lists: {{ items.length }}</h2>
-  <div class="table-responsive">
-    <table class="table">
-      <tr *ngFor="let item of items">
-        <td>
-          <h3>{{ item.name }}</h3>
-        </td>
-        <td>
-          <button class="btn btn-primary" (click)="show(item)">Show</button>
-        </td>
-        <td>
-          <button class="btn btn-danger" (click)="delete(item)">Delete</button>
-        </td>
-      </tr>
-    </table>
+  <div class="row">
+    <div class="col-sm">
+      <h2>Todo lists: {{ items.length }}</h2>
+      <div class="table-responsive">
+        <table class="table">
+          <tr *ngFor="let item of items">
+            <td>
+              <h3>{{ item.name }}</h3>
+            </td>
+            <td>
+              <button class="btn btn-primary" (click)="show(item)">Show</button>
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="delete(item)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div *ngIf="selectedItem" class="section">
+        <h2>List: {{ selectedItem.name }}</h2>
+        {{ selectedItem | json }}
+      </div>
+    </div>
   </div>
 </div>

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { TodolistsComponent } from './todolists/todolists.component';
 import { LogoutComponent } from './logout/logout.component';
+import { TodolistComponent } from './todolist/todolist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     TodolistsComponent,
-    LogoutComponent
+    LogoutComponent,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,
