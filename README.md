@@ -12,7 +12,7 @@ Node v10+
 Client - server communication with socket.io  
 Basic authentication with socketio-auth  
 
-To run this project:  
+To run this project (with Node v10+):  
 
 git clone git@github.com:bakkerjean/coding-exercise.git  
 
