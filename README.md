@@ -6,8 +6,9 @@ Exercise description:
 - The user should be able to log out.
 
 Client created with angular cli 8
-Server created with express generator
+Server created with express generator (<-- but ended up not using express at all :))
 
 Client - server communication with socket.io
 Basic authentication with socketio-auth
+
 
