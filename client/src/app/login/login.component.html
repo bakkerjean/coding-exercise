@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container login">
   <form>
-    <h2>Login</h2>
+    <h2 class="header">Login</h2>
     <label for="email" class="sr-only">Email address</label>
     <input
       type="text"
       #username
       id="email"
-      class="form-control"
+      class="form-control field"
       placeholder="Email"
       required
       autofocus
@@ -17,13 +17,13 @@
       type="password"
       #password
       id="password"
-      class="form-control"
+      class="form-control field"
       placeholder="Password"
       required
       value="pass"
     />
     <button
-      class="btn btn-lg btn-primary btn-block"
+      class="btn btn-lg btn-primary btn-block field"
       type="submit"
       (click)="login($event, username.value, password.value)"
     >
