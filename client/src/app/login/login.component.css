@@ -4,9 +4,10 @@
 }
 
 .form-control {
-  margin-top: 15px
+  margin-top: 15px;
 }
 
 button {
-  margin-top: 15px
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
