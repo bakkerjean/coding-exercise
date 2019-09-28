@@ -40,6 +40,6 @@ function removeSocket(socket) {
 function authenticate(socket, data, cb) {
   console.log("authenticating");
   const login = JSON.parse(data);
-  const authPassed = login.userName === "user" && login.password === "pass";
+  const authPassed = login.username === "user" && login.password === "pass";
   cb(null, authPassed);
 }
