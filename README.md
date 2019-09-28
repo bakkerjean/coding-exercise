@@ -14,13 +14,11 @@ Basic authentication with socketio-auth
 
 To run this project:
 
-Client:
+git clone git@gitlab.com:bakkerjean/coding-exercise.git
 
 cd client
 npm i
 ng serve
-
-Server:
 
 cd server
 npm i
